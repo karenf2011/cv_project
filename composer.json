@@ -1,0 +1,22 @@
+{
+    "autoload": {
+
+        "classmap": [
+
+            "./"
+
+        ]
+    },
+    "name": "tobyversteeg/php-practice",
+    "description": "Just practicing",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Toby Versteeg",
+            "email": "toby@codegorilla.nl"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
