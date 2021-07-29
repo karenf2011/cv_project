@@ -1,18 +1,26 @@
-body {
-    margin: 0;
-    padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-header {
-    background-color: aqua;
+body {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 1.1em;
+	font-weight: 200;
 }
 
 .main {
-    height: 500px;
+	margin-top: 80px;
+	margin-bottom: 40px;
 }
 
-footer {
+.navbar {
+    padding: 10px;
+}
+
+.navbar li {
+	padding-left: 15px;
+}
+
+/* footer {
     background-color: aquamarine;
     position: absolute;
     bottom: 0;
-}
+} */
