@@ -22,6 +22,12 @@ class HobbyModel extends Model
         'deleted_by',
     ];
 
+    /**
+     * Get hobbies from certain user
+     * @param $user_id (int) the ID of the user
+     * @return array
+     */
+
     public static function userHobbies(int $userId)
     {
         if (empty($userId)) {

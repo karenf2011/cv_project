@@ -23,18 +23,55 @@ class JobModel extends Model
     ];
 
     /**
-     * Get jobs from certrain user
+     * Get jobs from certain user
      * @param $user_id (int) the ID of the user
-     * @return object user data
+     * @return array
      */
+
     public static function userJobs($user_id)
     {
         if ((int)$user_id === 0) {
             return false;
         }
 
-        $sql = "SELECT * FROM " . self::$table . " WHERE user_id=" . $user_id . " AND deleted IS NULL";
+        $sql = "SELECT * FROM " . self::$table . " WHERE user_id=" . $user_id . " AND deleted IS NULL ORDER BY begin_year DESC";
 
         return MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
+    }
+
+    /**
+     * Get current job from certain user
+     * @param $user_id (int) the ID of the user
+     * @return object
+     */
+
+    public static function userCurrentJob(int $userId)
+    {
+        if (empty($userId)) {
+            return false;
+        }
+
+        $sql = "SELECT * FROM " . self::$table . " WHERE user_id=" . $userId . " AND deleted IS NULL AND end_year IS NULL";
+        $res = MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
+        
+        return count($res) > 0 ? $res[0] : null;
+    }
+
+    /**
+     * Get last job from certain user
+     * @param $user_id (int) the ID of the user
+     * @return object
+     */
+
+    public static function userLatestJob(int $userId)
+    {
+        if (empty($userId)) {
+            return false;
+        }
+
+        $sql = "SELECT * FROM " . self::$table . " WHERE user_id=" . $userId . " AND deleted IS NULL AND end_year IN (SELECT MAX(end_year) FROM jobs)";
+        $res = MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
+        
+        return count($res) > 0 ? $res[0] : null;
     }
 }
