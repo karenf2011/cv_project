@@ -10,7 +10,7 @@
                   <a class="nav-link" href="/">Home</a>
                </li>
                <li class="nav-item">
-                  <a class="nav-link" href="/users">Users</a>
+                  <a class="nav-link" href="/users">User</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link" href="/jobs">Jobs</a>

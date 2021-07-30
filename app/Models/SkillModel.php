@@ -22,6 +22,12 @@ class SkillModel extends Model
         'deleted_by',
     ];
 
+    /**
+     * Get skills from certain user
+     * @param $user_id (int) the ID of the user
+     * @return array
+     */
+
     public static function userSkills(int $userId)
     {
         if (empty($userId)) {

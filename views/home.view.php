@@ -6,37 +6,39 @@
         <?= $vars['user']->last_name ?>
     </h1>
     <div class="row">
-        <div class="col">
-            <?php foreach($vars['educations'] as $education) :?>
-                <?php if($education->end_year === NULL) : ?>
-                    <p> Huidige opleiding: 
+        <div class="col-4">
+            <?php foreach ($vars['educations'] as $education) : ?>
+                <?php if ($education->end_year === NULL) : ?>
+                    <p>Huidige opleiding:</p>
+                    <p>
                         <?= $education->sort_of_education ?> 
                         bij <?= $education->institution ?> 
                     </p>
                 <?php endif ?>
             <?php endforeach ?>
+            <p>Laatst behaald: </p>
+            <p>
+                <?= $vars['degree']->degree ?>
+                <?= $vars['degree']->sort_of_education ?>
+            </p>    
+            <a href="/educations">Zie meer</a>
+        </div>
+        <div class="col-4">
+            <p>Huidig werk:</p>
+            <?php if($vars['currentJob']): ?>
+                <p>
+                    <?= $vars['currentJob']->job ?>
+                </p>
+            <?php else : ?>
+                <p>Op zoek naar werk</p>
+            <?php endif ?> 
+            <p>Laatste werk:</p>
+            <p>
+                <?= $vars['latestJob']->job ?>
+            </p>
+            <a href="/jobs">Zie meer</a>
         </div>
     </div>
-
-
-            <!-- <p>Naam: 
-                <?= $vars['user']->first_name ?>
-                <?= $vars['user']->last_name ?>
-            </p>
-            <p>Geboortedatum:
-                <?= date('d-m-Y', strtotime($vars['user']->date_of_birth)) ?>
-            </p>
-            <p>Woonplaats:
-                <?= $vars['user']->residence ?>
-            </p>
-            <p>Emailadres:
-                <a href="mailto:<?= $vars['user']->email ?>"><?= $vars['user']->email ?></a>
-            </p>
-            <p>Github:
-                <a href="<?= $vars['user']->github ?>"><?= $vars['user']->github ?></a>
-            </p>
-        </div>
-    </div> -->
 </div>
 
 <?php require 'views/partials/footer.view.php' ?>

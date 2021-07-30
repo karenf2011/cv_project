@@ -15,7 +15,9 @@ class HomeController extends Controller
         return View::render('home.view', [
             'user'          => UserModel::get(1),
             'educations'    => EducationModel::userEducations(1),
-            'jobs'          => JobModel::userJobs(1),
+            'degree'        => EducationModel::userLatestDegree(1),
+            'currentJob'    => JobModel::userCurrentJob(1),
+            'latestJob'     => JobModel::userLatestJob(1),   
         ]);
     }
 }
