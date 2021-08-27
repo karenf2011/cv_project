@@ -1,4 +1,4 @@
-# php-mysql
+# CV Project
 
 After finishing the basecamp, this was my first project in the bootcamp.
 
