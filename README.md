@@ -1,13 +1,14 @@
 # php-mysql
-Codegorilla lesson: Extend PHP framework with MySQL
 
-This is just a basic PHP MVC framework to practice classes and learn coding when using Composer with autoload.
-This repo is a copy of php-practice, extended with models, controllers and a MySQL library
+After finishing the basecamp, this was my first project in the bootcamp.
+
+I used a framework my tech coach provided to make a basic page to show a CV.
+
+I used PHP and MySQL and followed the MVC practice to make this page.
+
 
 # Installation
 - composer install
 - npm install
 - create a MySQL database
 - rename .env.example to .env and add your database credentials
-
-Thats it ;-)
